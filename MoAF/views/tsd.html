@@ -1,0 +1,19 @@
+<div class="arteryContainer" style="float:left;"  >
+
+  <div class="arteryHeader">
+  <div class="headerControls">
+  <i class="fa fa-toggle-on"></i>
+  <i class="fa fa-arrow-down" ng-click="increaseSpeed()" title="Reduce Speed" ></i>
+  <div class="vertical-container">
+			<div ui-slider="{orientation: 'vertical', range: 'min'}" min="0" max="25" step="5" ng-model="forwSpeed" class="ng-pristine ng-valid ui-slider ui-widget ui-widget-content ui-corner-all ui-slider-vertical" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="height: 0%; bottom: 0%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 0%;"></a></div>
+		</div>
+  <input class="speedInput" min="20" max="40" ng-model="forwSpeed">
+  <i class="fa fa-arrow-up" ng-click="decreaseSpeed()" title="Increase Speed"></i>
+  <i class="fa fa-undo fa-lg" ng-click="rotation=rotation-90"></i>
+  </div>
+  <i class="fa fa-car fa-lg" style="padding-right:10px;"></i>{{arterial.label}}<span style="display:block;float:right" ></span></div>
+<div class="arteryWrapper " style="transform:rotate({{rotation}}deg)" >
+<div class="xAxis" style="width:15%;left:{{tsdZero._x}}px;width:{{tsdZero._x}}px;transform-origin:{{tsdZero._x/2}}px {{tsdZero._y/2}}px;"><div class="marker" style="height:10px;width:100%;top:{{$index*xSpacing}}px" ng-repeat="item in xAxisData" ng-class="{tsdBold:$index%40==0, tsdHide:$index%20!=0}">{{item}}</div></div>
+<div class="yAxis" style="width:15%;top:{{tsdZero._y}}px;width:{{tsdZero._x}}px;transform-origin:{{tsdZero._x/2}}px {{tsdZero._y/2}}px;"><div class="marker" width="150" height="10" ng-repeat="item in yAxisData.nodes" style="top:{{item.absDist}}px">{{item.description}}</div></div>
+<canvas id="dynamicCanvas" width="750" height="500" style="left:{{tsdZero._x}}px;top:{{tsdZero._y}}px"></canvas>
+</div></div>

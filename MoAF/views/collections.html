@@ -1,0 +1,94 @@
+
+<div class="leftNav">
+<accordion style="width:600px" close-others="false">
+                           
+                             <accordion-group>
+                                <accordion-heading><span class="panelTitle">On Display<i class="fa fa-plus" ng-class="{'fa-folder-open': status.open, 'fa-folder': !status.open}" ng-click="status.open=!status.open"></i></span>
+                                </accordion-heading>
+                                <div ><ul>
+                                	<li>Obsolete Notes</li>
+                                	<li>Confederate Notes</li>
+                                	<li>Federal Instruments</li>
+                                </ul>
+                            </div>
+                            </accordion-group>
+                            <accordion-group is-open="1">
+                                <accordion-heading  ><span class="panelTitle">Shenkman Collection<i class="fa fa-folder-open" ng-class="{'fa-folder-open': !status.open, 'fa-folder': status.open}" ng-click="status.open=!status.open"></i></span></accordion-heading>
+                                  <div ><ul>
+                                	<li>Demand Notes</Li>
+                                	<li class="active">Legal Tender Notes</Li>
+                                	<li>Compound Interest</Li>
+                                	<li>Interest Bearing Notes</Li>
+                                	<li>Refunding Certificates</Li>
+                                	<li>Silver Certificates</Li>
+                                	<li>Treasury Or Coin Notes</Li>
+									<li>National Bank Notes</Li>
+                                	<li>Federal Reserve Bank Notes</Li>
+                                	<li>Federal Reserve Notes</Li>
+                                	<li>The National Gold Bank Notes</Li>
+                                	<li>Gold Certificates</Li>
+                                	<li>Fractional Currency</Li>
+                          
+                                </ul>
+                            </div>
+                          </accordion-group>    
+                         <accordion-group>
+                                <accordion-heading><span class="panelTitle">MoAF Collection<i class="fa fa-plus" ng-class="{'fa-folder-open': status.open, 'fa-folder': !status.open}" ng-click="status.open=!status.open"></i></span>
+                                </accordion-heading>
+                                <div ><ul>
+                                	<li>World War II Emergency Notes</li>
+                                </ul>
+                            </div>
+                   
+                            </accordion-group>
+            </accordion>
+<ul>
+
+</div>
+<div class="mainContent">
+<div class="infoBlock"><div class="unitInfo">
+<span class="unitTitle">Legal Tender Notes</span>
+<ul>
+    <li><span>Issued</span>1862–1971</li>
+<li><span>Denominations</span>$10, $20, $50, $100, $500, $1,000</li>
+<li><span>Backed by</span>Full faith and Credit of the US Government<li>
+</ul>
+</div><div class="unitDescription">Legal Tender Notes, or United States Notes, were released over eight issues
+between 1862 and 1967. These notes are considered the original
+“greenbacks” due to the bright green ink used on the backs. While these
+notes were not backed by specie, they could be traded for gold at a
+discounted rate before 1879, at which time they were convertible to gold at
+its current par value. According to Act of May 3, 1878, total United States
+notes in circulation and in the Treasury must remain at $346,681,016. Very
+few of these notes remain in circulatio
+</div>
+</div>
+<div id="collections">
+	
+<div style="margin:20px;width:400px;height:180px;float:left" class="wrapper" ng-repeat="note in collections.notes">
+<div  class="noteHolder vertical flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="noteHeader">{{note.title}}<span  class="noteActions"><i class="fa fa-refresh" ng-click="flipped=!flipped"></i>
+<i class="fa fa-info-circle"></i><i class="fa fa-share-alt"></i>
+	</span></div>
+    <div class="flipper">
+        <div class="front" style="background-image:url('images/currency/notes/{{note.imageMain}}.png')">
+        </div>
+        <div class="back" style="background-image:url('images/currency/notes/{{note.imageHover}}.png')">
+        </div>
+    </div>
+</div>
+</div>
+<div ng-controller="paginationCtrl" class="moafPagination">
+<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+
+	</div></div>
+
+    <footer>
+<div class="container">
+<div class="row">
+<p class="legal">Copyright © 2014 Museum of American Finance.  All Rights Reserved. <a href="/misc/privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/misc/user_agreement">User Agreement</a> &nbsp;|&nbsp; <a href="/misc/sitemap">Sitemap</a> &nbsp;|&nbsp; <a href="/misc/rss">RSS</a> &nbsp;|&nbsp; <a href="/misc/credits">Credits</a></p>
+
+</div>
+</div>
+</footer>
+</div>

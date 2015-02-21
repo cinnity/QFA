@@ -1,0 +1,18 @@
+<div id="header" class="noPrint" style="border-bottom:1px solid grey;width:100%;height:60px">
+    <div id="corpId"></div>
+    <div id="mainMenu" style="z-index:1111" class="noPrint"></div>
+</div>
+    <div class="menu_1" noPrint ng-init="draw()">
+        
+    </div>
+    <div id="yAxis" style="display:none;position:absolute;left:30px;top:100px;width:100%">
+        <div ng-repeat="sController in controllers" style="border-bottom:1px dotted grey">{{sController.description}}</div>
+    </div>
+    <div id="xAxis" style="position:absolute;left:200px;top:100px">
+        <ul>
+            <li ng-repeat="stamp in timeStamps | date:'h:mm:ss'" ng-class="{'_visible':$index%2==0, _invisible:$index%2!==0}" style="height:500px;display:block;float:left;margin-left:5px;"><span class="axisMarker">{{timeStamps[$index] | date:'h:mm:ss'}}</span><span class="xAxisBlock"></span></li>
+        </ul>
+
+    </div>
+
+

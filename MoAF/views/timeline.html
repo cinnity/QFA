@@ -1,0 +1,49 @@
+<div ng-controller="mainCtrl">
+    <div class="lineWrapper" style="float:left;width:100%;height70%;margin:auto;margin-top:25px;position:absolute;height:75%">
+
+        <div class="timeLine" style="width:1000%;cursor:pointer;position:absolute;left:{{lineLeft}}px;-webkit-transition-property:left;-webkit-transition-duration:3s" draggable>
+            <div class="nav rightNav" ng-click="move('right')"><i class="fa fa-arrow-right"></i>
+            </div>
+            <div class="nav leftNav" ng-click="move('left')"><i class="fa fa-arrow-left"></i>
+            </div>
+            <div ng-init="predicate = 'eventTime'" ng-repeat="era in eras " class="era">
+
+
+                <div class="eraHeaderDiv"><i class="fa fa-calendar"></i><span class="eraHeader">{{era.title}}</span><span class="eraSubHeader">{{era.subTitle}}</span>
+                </div>
+                {{event.eventType}}
+                <div class="eraBody">
+                    <div ng-repeat="(key, decade) in era.decades" class="decade" style="height:100%;position:relative;width:{{(decade.length/3*345)+5}}px;min-width:350px"><span class="eventHeader">{{key}}</span>
+                        <div ng-repeat="event in decade track by $index" class="event {{event.eventType}}" style="position:absolute;top:{{($index%3*225)+30}}px;left:{{($index/3 - $index%3/3)*350}}px">
+                          <div ng-controller="modalCtrl">  <div class="eventMask" ng-show="event.eventType=='eventFinHist'&&event.eventImage!=''" ng-click="open(event.eventTitle, 'images/timeline/'+era.assetPath+'/'+event.eventImage)"></div>
+                            <div class="eventDetail" ng-show="event.eventType=='eventFinHist'&&show" ng-click="open()"><span class="arrow"></span><span class="popupHeader">{{event.eventTitle}}<i class="fa fa-times" ng-click="show=!show;showHideInfo($event, event, show)"></i></span><span class="popupTxt">{{event.eventDetail}}<span/></div><div class="eventTitle"><span>{{event.eventTime}} {{event.eventTitle}}</span><i class="fa" ng-class="{'fa-chevron-down':!show,'fa-chevron-up':show}" ng-click="show=!show;showHideInfo($event, event, show)" ng-show="event.eventType=='eventFinHist'"></i>
+                            </div>
+                            <div class="imageWrapper">{{event.eventImage.clientWidth}}<img ng-if="event.eventImage" src="images/timeline/{{era.assetPath}}/{{event.eventImage}}" style="width:100%"  />
+
+                             
+                                    <script type="text/ng-template" id="modal.html">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">{{title}}</h3><i class="fa fa-times" ng-click="ok()"></i>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="{{image}}" style="width:100%" />
+                                        </div>
+                                        <div class="modal-footer">
+                                           
+                                        </div>
+                                    </script>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
