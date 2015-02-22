@@ -1,0 +1,97 @@
+[
+    {
+        "noteType": "Colonial Currency",
+        "noteEra": "colonial",
+        "noteSpan": "1690-1778"
+    },
+    {
+        "noteType": "Continental Currency",
+        "noteEra": "Continental",
+        "noteSpan": "1787-1795"
+    },
+    {
+        "noteType": "War of 1812 Federal Instruments",
+        "noteEra": "Obsolete",
+        "noteSpan": "1812-1815"
+    },
+    {
+        "noteType": "Private Bank Notes",
+        "noteEra": "Obsolete",
+        "noteSpan": "1797-1864"
+    },
+    {
+        "noteType": "Demand Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1861-1862"
+    },
+    {
+        "noteType": "Confederate Currency",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1861-1864"
+    },
+    {
+        "noteType": "Legal Tender Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1862-1871"
+    },
+    {
+        "noteType": "Fractional Currency",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1862-1877"
+    },
+    {
+        "noteType": "Gold Certificates",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1865-1866"
+    },
+    {
+        "noteType": "Compound Interest Treasury Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1864-1865"
+    },
+    {
+        "noteType": "National Gold Bank Notes of California",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1870-1875"
+    },
+    {
+        "noteType": "Silver Certificates",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1879-1965"
+    },
+    {
+        "noteType": "Treasury Coin Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1890-1991"
+    },
+    {
+        "noteType": "Federal Reserve Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1915 - 2020"
+    },
+    {
+        "noteType": "Refunding Certificates",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1879-1980"
+    },
+    {
+        "noteType": "National Bank Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1863-1935"
+    },
+    {
+        "noteType": "Federal Reserve Bank Notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1915-1935"
+    },
+    {
+        "noteType": "World War II emergency notes",
+        "noteEra": "Federal Large Size",
+        "noteSpan": "1942-1944"
+    },
+    {
+        "noteType": "Private Bank notes",
+        "noteEra": "Obsolete",
+        "noteSpan": "1797-1864"
+    }
+]

@@ -7,7 +7,6 @@ var moafApp = angular.module("moafApp", [
     "ngCookies",
     "ngGrid",
     "ngRoute",
-    "ng-context-menu",
     "moafControllers",
     "moafServices",
     "moafDirectives"

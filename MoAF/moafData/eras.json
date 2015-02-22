@@ -1,0 +1,441 @@
+[
+    {
+        "title": "Colonial & Continental",
+        "subTitle": "Notes Issued 1690–1796",
+        "assetPath": "1_Colonial_Continental",
+        "events": [
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Colonial Currency",
+                "eventImage": "5985f.png",
+                "eventStart": "1861",
+                "eventDecade": "1690s",
+                "eventTime": "1690–1787",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    1,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "French and Indian War",
+                "eventDecade": "1760s",
+                "eventTime": "1754-63",
+                "eventCoords": [
+                    2,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Stamp Act",
+                "eventImage": "StampAct_LOC_01711u.jpg",
+                "eventDecade": "1760s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventTime": "1765",
+                "eventCoords": [
+                    2,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "Boston Tea Party",
+                "eventDecade": "1770s",
+                "eventTime": "1773",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    3,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "Revolutionary War Begins",
+                "eventDecade": "1770s",
+                "eventTime": "1775",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    3,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "Declaration of Independence Approved by 2nd Continental Congress",
+                "eventTime": "1776",
+                "eventDecade": "1770s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    3,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Bank of North America Chartered",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventImage": "",
+                "eventTime": "1781",
+                "eventDecade": "1780s",
+                "eventCoords": [
+                    4,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Shay’s Rebellion",
+                "eventImage": "Shays_LOC_3b25109u.jpg",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventTime": "1786-7",
+                "eventDecade": "1780s",
+                "eventCoords": [
+                    4,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Continental Currency",
+                "eventImage": "362122f.png",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "imagePos": [
+                    "right",
+                    "60%",
+                    "",
+                    "10% 5%"
+                ],
+                "eventTime": "1787-96",
+                "eventDecade": "1780s",
+                "eventCoords": [
+                    4,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "US Constitution Ratified",
+                "eventImage": "",
+                "eventTime": "1788",
+                "eventDecade": "1790s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    5,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Alexander Hamilton Appointed First US Secretary of the Treasury",
+                "eventImage": "Hamilton_BEP.jpg",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventTime": "1789",
+                "eventDecade": "1790s",
+                "eventCoords": [
+                    5,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "George Washington Inaugurated as First US President",
+                "eventImage": "",
+                "eventTime": "1789",
+                "eventDecade": "1790s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    5,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "First Bank of the United States Chartered",
+                "eventImage": "BankofUS_LOC_15339a.jpg",
+                "eventTime": "1791",
+                "eventDecade": "1790s",
+                "eventCoords": [
+                    6,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Hamilton's First Report on Public Credit",
+                "eventImage": "",
+                "eventTime": "1790",
+                "eventDecade": "1790s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    6,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "US Mint Created",
+                "eventImage": "EstablishingMint_NationalArchives.jpg",
+                "eventTime": "1792",
+                "eventDecade": "1790s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    6,
+                    3
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Obsolete",
+        "subTitle": "Notes Issued 1797-1862",
+        "assetPath": "2_Obsolete",
+        "events": [
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Panic of 1792",
+                "eventImage": "",
+                "eventTime": "1792",
+                "eventDecade": "1790s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    7,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Private Bank Notes",
+                "eventImage": "M2f_t.png",
+                "imageSize": "400x170",
+                "eventTime": "1797-1862",
+                "eventDecade": "1790s",
+                "eventCoords": [
+                    7,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Albert Gallatin appointed Secretary of the Treasury",
+                "eventImage": "Gallatin_BEP.jpg",
+                "eventTime": "1801",
+                "eventDecade": "1800s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    8,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "War of 1812",
+                "eventTime": "1812-15",
+                "eventDecade": "1810s",
+                "eventCoords": [
+                    9,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "War of 1812 Federal Instruments",
+                "eventImage": "1097.12.39_t.png",
+                "eventTime": "1812-15",
+                "eventDecade": "1810s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    9,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Second Bank of the United States Chartered",
+                "eventImage": "SecondBankUS_LOC_15358a",
+                "eventTime": "February 1816",
+                "eventDecade": "1810s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    9,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Bank War",
+                "eventImage": "BankWar_LOC_3a05364u.png",
+                "eventTime": "1832-1841",
+                "eventDecade": "1830s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    10,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Panic of 1837",
+                "eventImage": "Panic1837Cartoon_LOC_3g03240u_t.png",
+                "eventTime": "1837",
+                "eventDecade": "1830s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    10,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "Irish Potato Famine",
+                "eventImage": "",
+                "eventTime": "1845-52",
+                "eventDecade": "1830s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    10,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "1848 Gold Discovered at Sutter's Mill",
+                "eventImage": "",
+                "eventTime": "1848",
+                "eventDecade": "1850s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    11,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Panic of 1857",
+                "eventImage": "Panic1857_LOC_t.png",
+                "eventTime": "1857",
+                "eventDecade": "1850s",
+                "eventCoords": [
+                    11,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "1857 Dred Scott Supreme Court Decision",
+                "eventImage": "",
+                "eventTime": "1857",
+                "eventDecade": "1850s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    11,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "American Civil War",
+                "eventImage": "",
+                "eventTime": "1861-1865",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    12,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "1861-64 Confederate Currency",
+                "eventImage": "cs23_t.png",
+                "eventTime": "1861-64",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    12,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "1861-1862 Demand Notes",
+                "eventImage": "",
+                "eventTime": "1861-1862",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    12,
+                    3
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Federal Large Size Era",
+        "subTitle": "Notes Issued 1862 - 1921",
+        "assetPath": "3_Large Size Federal",
+        "events": [
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Legal Tenders Act",
+                "eventImage": "",
+                "eventTime": "1862",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    14,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Fractional Currency",
+                "eventImage": "",
+                "eventTime": "1862-1876",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    14,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "National Currency Act",
+                "eventImage": "",
+                "eventTime": "1863",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    14,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "1863 Emancipation Proclamation",
+                "eventImage": "",
+                "eventTime": "1863",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    15,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "1863 Emancipation Proclamation",
+                "eventImage": "",
+                "eventTime": "1863",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    15,
+                    1
+                ]
+            }
+        ]
+    }
+]
