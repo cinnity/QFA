@@ -1,5 +1,5 @@
 body {
-margin-top: 70px;
+margin-top: 55px;
 /* font-family: monospace; */
 background: #58504B;
 color: wheat;
@@ -7,7 +7,6 @@ color: wheat;
 
 #header {
 width: 100%;
-height: 64px;
 float: left;
 z-index: 1004;
 top:0;
@@ -18,11 +17,10 @@ box-shadow: 0 4px 10px rgb(55, 52, 52);top: 0;
 }
 .mainMenu span, .mainMenu a{
   display:block;
-  min-width: 250px;
   float:left;
   padding: 12px 10px;
    
-  font-size: 2em;
+  font-size: 1.75em;
   font-family: monospace;
   /* font-weight: bold; */
   color: rgba(46, 38, 40, 0.46);
@@ -42,25 +40,23 @@ box-shadow: 0 4px 10px rgb(55, 52, 52);top: 0;
 
   color: white;}
 #corpId {
-width: 280px;
+width: 20%;
 /* height: 100px; */
 /*background: #fff url('../images/logo.png') 20px 5px no-repeat;*/
 float: left;
 }
 #corpId img {
 border: 0;
-width: 90px;
+width: 85px;
 margin: auto;
 display: block;
-margin-top: 5px;
+margin-top: 3px;
 /* background: white; */
 }
 .mainContent{
 /* margin-top:50px; */
-
-  
-padding: 40px;
-width: 85%;
+padding: 30px;
+width: 80%;
 float: left;
 border-left: 1px solid black;
 }
@@ -105,9 +101,10 @@ box-shadow: 0 0 3px;
 }
 
 .flip-container, .front, .back {
-    width: 400px;
-    height: 172px;
+    width: 100%;
+    height: 100%;
     /* float: left; */
+    background-size: 100%;
 }
 
 /* flip speed goes here */
@@ -163,9 +160,9 @@ backface-visibility:hidden;
     transform: rotateY(-180deg);
 }
 #collections, #timeLine{
-  min-height: 600px
-;
-  margin-top: 10px;
+  /* min-height: 600px
+; */
+  /* margin-top: 10px; */
 }
 .unitHeader{
     width: 30%;
@@ -173,10 +170,11 @@ backface-visibility:hidden;
     /* height: 50px; */
 }
 .infoBlock{
-height:150px;
+height: 130px;
+font-size: 0.9em;
 }
 span.unitTitle {
-  font-size: 1.5em;
+  font-size: 1.2em;
   width: 300px;
   border-radius: 4px;
   display: block;
@@ -186,23 +184,24 @@ span.unitTitle {
   text-shadow: 1px 1px black;
 }
 .unitInfo{
-  width:30%;
+  width: 35%;
   float: left;
   margin-right: 40px;
 }
 .unitInfo li span {
   font-weight:bold;
-  width: 160px;
+  width: 150px;
   display: inline-block;
   border-right: 2px solid;
   margin-right: 20px;
+  float: left;
 }
 ul{
   padding:0;
 }
 .searchSpan{
   float:right;
-  margin: 25px 50px;
+  margin: 15px 50px;
 }
 .searchSpan i{
  padding:5px;
@@ -216,20 +215,21 @@ border-radius: 3px;
   /* color: blue; */
 }
 .unitDescription{
-  margin: 30px 0;
+  /* margin: 30px 0; */
   width: 60%;
   float: left;
   font-family: 'segoe ui', 'Lucida Grande';
+  font-size: 0.9em;
 }
 .leftNav{
 float: left;
-width: 280px;
+width: 20%;
 background: grey;
-color: w;
+color: white;
 /* text-shadow: 1px 1px black; */
 height: 100%;
 font-family: 'segoe ui', 'Lucida Grande';
-padding-top: 50px;
+padding-top: 30px;
 box-shadow: 2px 2px 4px rgb(44, 40, 39);
 }
 .leftNav li {
@@ -247,7 +247,6 @@ padding: 0 0 0 35px;
 .mainMenu{
   border-left: 1px dashed rgb(46, 38, 40);
   float: left;
-  padding-left: 50;
 }
 li{
   list-style: none
@@ -264,7 +263,7 @@ box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5);
 background:none;
 border:none;
 border-radius:0;
-padding: 10px 30px;
+padding: 10px 20px;
 box-shadow: 2px 3px 4px black;
 z-index: 22222222;
 position: ab;
@@ -335,8 +334,8 @@ text-align: center;
 /* height: 155px; */
 font-size: 76%;
 color: wheat;
-position: fixed;
-bottom: 20px;
+/* position: fixed; */
+bottom: 40px;
 left: 20%;
 }
 footer a{
@@ -447,7 +446,7 @@ left:0;top:50%;
 border-radius: 0 5px 5px 0;
 }
 .nav i{
-  /* color:wheat; */
+  color:wheat;
   font-size:2em;
   display: block;
   position: absolute;
@@ -714,4 +713,17 @@ overflow-y: auto;
   width: 100%;
   background: rgba(0, 0, 0, 0.61);
   border: none;
+}
+accordion .panel-body{
+  padding-top:0;
+}
+accordion .panel-title, .leftNav li{
+ font-size:0.9em;
+}
+.infoBlock ul{
+  margin:10px 0 0 0;
+}
+.flipper{
+  height:150px;
+  width: 350px;
 }
