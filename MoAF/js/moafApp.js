@@ -25,7 +25,7 @@ moafServices.factory("moafData", ["$resource", function($resource) {
     })
 }])
 
-moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafData", function($scope, $location, $modal, moafData) {
+moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafData", "$log",function($scope, $location, $modal, moafData,$log) {
     //$scope.currentPage=$location.path().split("/")[$location.path().split("/").length-1];
     $scope.currentPage = $location.path().split("/")[$location.path().split("/").length - 1]
     $scope.showHideInfo = function(event, obj, show) {
@@ -39,7 +39,7 @@ moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafDa
             angular.element(_event)[0].style.zIndex = 1;
             angular.element(_event)[0].style.opacity = 0.2;
         })
-        console.log(show);
+
         var imgWrapper = parentEvent.find('.imageWrapper')[0];
         var eventDetail = angular.element(event.target).parents('.event').eq(0).find('.eventDetail');
         var eventMask = angular.element(event.target).parents('.event').eq(0).find('.eventMask')
@@ -67,29 +67,29 @@ moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafDa
     }
 
 
-    $scope.open = function(img) {
-        $scope.image = img;
-        var modalInstance = $modal.open({
-            templateUrl: 'modal.html',
-            controller: 'modalInstCtrl',
-            resolve: {
-                items: function() {
-                    return $scope.items;
-                },
-                image: function() {
-                    return $scope.image;
-                }
+    // $scope.open = function(img) {
+    //     $scope.image = img;
+    //     var modalInstance = $modal.open({
+    //         templateUrl: 'modal.html',
+    //         controller: 'modalInstCtrl',
+    //         resolve: {
+    //             items: function() {
+    //                 return $scope.items;
+    //             },
+    //             image: function() {
+    //                 return $scope.image;
+    //             }
 
-            }
-        });
+    //         }
+    //     });
 
-        modalInstance.result.then(function(selectedItem) {
+    //     modalInstance.result.then(function(selectedItem) {
 
-            $scope.selected = selectedItem;
-        }, function() {
-            $log.info('Modal dismissed at: ' + new Date());
-        });
-    };
+    //         $scope.selected = selectedItem;
+    //     }, function() {
+    //         $log.info('Modal dismissed at: ' + new Date());
+    //     });
+    // };
 
 }])
 
@@ -134,48 +134,6 @@ moafDirectives.directive("draggable", function() {
 
 })
 
-moafControllers.controller("collectCtrl", ["$scope", function($scope) {
-    $scope.collections = {
-        "notes": [{
-            "title": "One Dollar Bill",
-            "imageMain": "US_1Dollar_front",
-            "imageHover": "US_1Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }, {
-            "title": "Two Dollar Bill",
-            "imageMain": "US_2Dollar_front",
-            "imageHover": "US_2Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }, {
-            "title": "Five Dollar Bill",
-            "imageMain": "US_5Dollar_front",
-            "imageHover": "US_5Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }, {
-            "title": "Ten Dollar Bill",
-            "imageMain": "US_10Dollar_front",
-            "imageHover": "US_10Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }, {
-            "title": "Twenty Dollar Bill",
-            "imageMain": "US_20Dollar_front",
-            "imageHover": "US_20Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }, {
-            "title": "Hundred Dollar Bill",
-            "imageMain": "US_100Dollar_front",
-            "imageHover": "US_100Dollar_back",
-            "description": "Lorem ipsum dolor sit amet, lorem dolorem vix ei. Pri ea deserunt explicari. No mea modo eros, posse delicata tincidunt ad usu, labitur feugait eu est. Per atqui democritum appellantur ea, tota lucilius explicari has te. His nostrud liberavisse at."
-        }]
-
-
-    }
-    $scope.flipNote = function(note) {
-        console.log(angular.element(note).find('div').attr('class'))
-    }
-}])
-
-
 moafApp.config(["$routeProvider", function($routeProvider) {
     $routeProvider.when('/timeline', {
         templateUrl: 'views/timeline',
@@ -183,13 +141,13 @@ moafApp.config(["$routeProvider", function($routeProvider) {
 
     }).otherwise({
         templateUrl: 'views/collections',
-        controller: 'collectCtrl'
+        controller: 'collectionsCtrl'
 
     })
 }])
 
 
-moafControllers.controller('paginationCtrl', function($scope, $log) {
+moafControllers.controller('paginationCtrl', function($scope) {
     $scope.totalItems = 64;
     $scope.currentPage = 4;
 
@@ -211,10 +169,11 @@ moafControllers.controller('modalCtrl', function($scope, $rootScope, $modal, $lo
     $scope.items = ['item1', 'item2', 'item3'];
 
     $scope.open = function(title, image) {
+        console.log(image)
         $scope.image = image
-        $scope.title = title;
+        $scope.title = 'title';
         var modalInstance = $modal.open({
-            templateUrl: 'modal.html',
+            templateUrl: 'views/collectModal.html',
             controller: 'modalInstCtrl',
             //size: size,
             resolve: {
@@ -254,3 +213,163 @@ moafControllers.controller('modalInstCtrl', function($scope, $rootScope, $modalI
         $modalInstance.dismiss('cancel');
     };
 });
+
+
+
+moafControllers.controller("collectionsCtrl", function($scope, $log){
+        // Create x2js instance with default config
+function loadXMLDoc(dname) {
+        if (window.XMLHttpRequest) {
+            var xhttp=new XMLHttpRequest();
+        }
+        else {
+            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET",dname,false);
+        xhttp.send();
+        return xhttp.responseXML;
+    }
+
+
+var xmlDoc = loadXMLDoc("moafData/MOAFNotesData.xml");
+    var x2js = new X2JS();
+    var notesData = x2js.xml2json(xmlDoc);
+    $scope.notes = notesData.NotesDataTable.NoteInfo
+    $scope.shenkmanCollection=[];
+    $scope.ExhibitCollection=[];
+    $scope.MOAFCollection=[];
+   
+    angular.forEach($scope.notes, function(note, noteIndex){
+if(note.IsShenkmanCollection){
+    $scope.shenkmanCollection.push(note)
+}
+if(note.IsExhibitCollection){
+    $scope.ExhibitCollection.push(note)
+}
+if(note.IsMOAFCollection){
+    $scope.MOAFCollection.push(note)
+}
+    })
+$scope.currentCollection = 'shenkmanCollection';
+
+ $scope.maxSize = 5;
+  $scope.bigTotalItems = 175;
+  $scope.bigCurrentPage = 1;
+
+$scope.totalItems = $scope[$scope.currentCollection].length;
+
+  $scope.filteredNotes = [];
+  $scope.currentPage = 1;
+  $scope.numPerPage = 6;
+
+ $scope.numPages = function () {
+    return Math.ceil($scope[$scope.currentCollection].length / $scope.numPerPage);
+  };
+
+$scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+    if(pageNo>$scope.numPages()){console.log()}
+    $scope.bigCurrentPage = $scope.currentPage;
+};
+
+  $scope.pageChanged = function() {
+    //$log.log('Page changed to: ' + $scope.currentPage);
+  };
+$scope.$watch('currentPage + numPerPage', function() {
+    var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+    var end = begin + $scope.numPerPage;
+    $scope.filteredNotes = $scope[$scope.currentCollection].slice(begin, end);
+  });
+
+$scope.$watch('bigCurrentPage + numPerPage', function() {
+    var begin = (($scope.bigCurrentPage - 1) * $scope.numPerPage);
+    var end = begin + $scope.numPerPage;
+    $scope.filteredNotes = $scope[$scope.currentCollection].slice(begin, end);
+  });
+})
+
+
+moafControllers.controller('collModalCtrl', function($scope, $rootScope, $modal, $log) {
+
+    $scope.relatedNotes = ['item1', 'item2', 'item3','item4', 'item5', 'item6'];
+
+    $scope.open = function(title, image, aspect) {
+        $scope.image = image
+        $scope.title = 'title';
+aspect>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
+var img = new Image();
+
+img.onload = function(){
+  var height = img.height;
+  var width = img.width;
+  width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
+//console.log($scope.aspect)
+}
+
+img.src = image;
+
+        var modalInstance = $modal.open({
+            templateUrl: 'views/collectModal.html',
+            controller: 'collModalInstCtrl',
+            //size: size,
+            resolve: {
+                relatedNotes: function() {
+                    return $scope.relatedNotes;
+                },
+                image: function() {
+                    return $scope.image;
+                },
+                title: function() {
+                    return $scope.title;
+                },
+                aspect: function(){
+                    return $scope.aspect
+                }
+
+            }
+        });
+
+        modalInstance.result.then(function(selectedItem) {
+            $scope.selected = selectedItem;
+        }, function() {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+});
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+moafControllers.controller('collModalInstCtrl', function($scope, $rootScope, $modalInstance, title, image,relatedNotes, aspect) {
+    $scope.image = image;
+    console.log(image);
+    $scope.aspect = aspect;
+//     var img = new Image();
+
+// img.onload = function(){
+//   var height = img.height;
+//   var width = img.width;
+//   width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
+// console.log($scope.aspect)
+// }
+
+// img.src = image;
+    $scope.title = title;
+$scope.relatedNotes = relatedNotes;
+    $scope.ok = function() {
+        $modalInstance.close();
+    };
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    };
+});
+
+
+
+
+
+
+
+
+

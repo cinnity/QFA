@@ -1,5 +1,6 @@
 
-<div class="leftNav">
+<div class="leftMenu">
+   
 <accordion style="width:600px" close-others="false">
                            
                              <accordion-group>
@@ -63,24 +64,51 @@ notes in circulation and in the Treasury must remain at $346,681,016. Very
 few of these notes remain in circulatio
 </div>
 </div>
-<div id="collections">
-	
-<div style="margin:10px 25px 10px 0px;height:180px;float:left" class="wrapper" ng-repeat="note in collections.notes">
-<div  class="noteHolder vertical flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="noteHeader">{{note.title}}<span  class="noteActions"><i class="fa fa-refresh" ng-click="flipped=!flipped"></i>
-<i class="fa fa-info-circle"></i><i class="fa fa-share-alt"></i>
-	</span></div>
+
+     <div ng-controller="collectionsCtrl">
+
+<div ng-controller="collModalCtrl">  <div style="margin:10px;height:180px;float:left" class="wrapper" ng-repeat="note in filteredNotes" ng-click="open(note.OverrideTitle, 'images/'+note.front, note.Width/note.Height)">
+<div class="noteHeader"><span class="noteTitle">{{note.OverrideTitle}}</span><span  class="noteActions"><i class="fa fa-refresh" ng-click="flipped=!flipped"></i>
+<i class="fa fa-info-circle"></i><i class="fa fa-share-alt" ></i>
+    </span></div><div  class="noteHolder vertical flip-container">
+    
     <div class="flipper">
-        <div class="front" style="background-image:url('images/currency/notes/{{note.imageMain}}.png')">
+        <div class="front" style="background-image:url('images/{{note.front}}')">
         </div>
-        <div class="back" style="background-image:url('images/currency/notes/{{note.imageHover}}.png')">
+        <div class="back" style="background-image:url('images/{{note.back}}')">
         </div>
     </div>
 </div>
 </div>
-<div ng-controller="paginationCtrl" class="moafPagination">
-<pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+</div>
+<!-- <div ng-repeat="note in MOAFCollection"><span style="color:orange">{{note.OverrideTitle}}</span></div>
+ 
+<div data-pagination="" data-num-pages="numPages()" 
+      data-current-page="currentPage" data-max-size="maxSize"  
+      data-boundary-links="true"></div>
+-->
 
-	</div></div>
+     <!--  <div class="pagWrapper"><pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination></div>
+  <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+    <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
+    <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></pagination>
+    <pre>The selected page no: {{currentPage}}</pre>
+    <button class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>
+
+    <hr />
+    <h4>Pager</h4>
+    <pager class="moafPager" total-items="totalItems" ng-model="currentPage"></pager>--> 
+
+    <div class="nav rightNav" ng-click="setPage(currentPage + 1)"><i class="fa fa-arrow-right"></i>
+            </div>
+
+<div class="nav leftNav" ng-click="setPage(currentPage - 1)"><i class="fa fa-arrow-left"></i>
+            </div>
+
+ <div class="pageTrack">Page: {{bigCurrentPage}} / {{numPages()}}</div>
+
+    </div> 
+
 
 </div>

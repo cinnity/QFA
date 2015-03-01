@@ -30,13 +30,6 @@ box-shadow: 0 4px 10px rgb(55, 52, 52);top: 0;
   color: #2E2628;
 
   }
-  .mainMenu a:hover{
-    background: #58504B;
-    color: wheat;
-}
-.mainMenu a:hover .fa-lg{
-  color:wheat;
-}
 .mainMenu .fa-lg{
 
   margin-right: 20px;
@@ -251,9 +244,6 @@ border-radius: 3px;
   font-family: 'segoe ui', 'Lucida Grande';
   font-size: 0.9em;
 }
-.leftMenu{
-  display:none;
-}
 .leftNav{
 float: left;
 width: 20%;
@@ -467,34 +457,20 @@ font-size: 1.5em;
 .moafPager ul li.previous{
  left:50px;top:200px!important
 }
-.pageTrack{
-bottom:0;
-left: 45%;
-width: 10%!important;
-text-align: center;
-padding-top: 15px;
-border-radius: 5px 5px 0 0;
-box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.29);
-}
-.nav,  .pager li>a, .pager li>span, .moafPager, .pageTrack{
+.nav, .pager li>a, .pager li>span, .moafPager{
 position:fixed;width:50px;height:50px;
 background: rgb(94, 132, 108);
 display: block; 
-
-}
-.timeLine .nav{
-  z-index:10
 }
 .rightNav{
 right:0;top:50%;
 border-radius: 5px 0 0 5px;
 box-shadow: 2px 2px 4px rgb(44, 40, 39);
-z-index: 10;
 }
 .leftNav{
 left:0;top:50%;
 border-radius: 0 5px 5px 0;
-/*display: none;*/
+display: none;
 }
 .nav i,  .pager li>a, .pager li>span{
   color:wheat;
@@ -508,7 +484,6 @@ border-radius: 0 5px 5px 0;
   text-shadow: 0 0 2px black;
   top: 0;
   z-index: 111;
-  cursor: pointer;
 }
 .decade{
   float:left;
@@ -723,7 +698,7 @@ font-size: 1.3em;
 
 @media screen and (min-width: 768px){
 .modal-dialog {
-width: 700px;
+width: 600px;
 margin: auto;
 
 margin-top: 60px;
@@ -731,9 +706,9 @@ margin-top: 60px;
 
 .modal-content{
   border-radius:3px;
-  background: #58504B;
+  background: rgb(88, 80, 75);
   /* max-height: 85%; */
-  overflow: hidden;
+  overflow: auto;
   border: none;
 }
 .modal-header{
@@ -755,54 +730,16 @@ font-size: 1.5em;
 border: none;
 }
 }
-.modal-content .relatedNote{
-  display:inline-block;
-  background:brown; 
-  width:180px;
-  height: 80px;
-  margin:10px
-}
-.modal-content .portrait {
-/* width: 120px; */
-/* height: 100%; */
-float: left;
-/* position: absolute; */
-/* top: 0; */
-/* right: 0; */
-}
-.modal-content .landscape {
-width: 100%;
-height: 120px;
-float: left;
-}
-.modal-content .related{
- 
-}
-.colModal .main{
-  float:left;
-}
-.modal-content .portrait .main{
-  float:left;
-  width:80%;
-  overflow-y: scroll;
-  height: 90%;
-  padding-bottom: 10px;
-}
-.modal-content .portrait .related{
-  float:left;
-  width:20%;
-  overflow-y: auto;
-}
+
 .modal-body{
 max-height: 80%;
-/* overflow-y: auto; */
-padding: 10px;
+overflow-y: auto;
 }
 .modal-footer{
   /* position: absolute; */
   bottom: 0;
   width: 100%;
-  /* background: rgba(0, 0, 0, 0.61); */
+  background: rgba(0, 0, 0, 0.61);
   border: none;
 }
 accordion .panel-body{
@@ -818,8 +755,4 @@ accordion .panel-title, .leftNav li{
   height:150px;
   width: 350px;
   cursor: pointer;
-}
-.landscape{
-width:100%;
-height:120px;
 }
