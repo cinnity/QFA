@@ -262,6 +262,16 @@ $scope.totalItems = $scope[$scope.currentCollection].length;
   $scope.currentPage = 1;
   $scope.numPerPage = 6;
 
+$scope.getRelatedNotes = function(thisNote){
+    var relatedNotes = [];
+    angular.forEach($scope.notes, function(note){
+if(note.GroupID==thisNote.GroupID){
+    relatesNotes.push(note)
+}
+    })
+    console.log(relatedNotes)
+    return relateNotes
+}
  $scope.numPages = function () {
     return Math.ceil($scope[$scope.currentCollection].length / $scope.numPerPage);
   };
@@ -291,39 +301,36 @@ $scope.$watch('bigCurrentPage + numPerPage', function() {
 
 moafControllers.controller('collModalCtrl', function($scope, $rootScope, $modal, $log) {
 
-    $scope.relatedNotes = ['item1', 'item2', 'item3','item4', 'item5', 'item6'];
-
-    $scope.open = function(title, image, aspect) {
-        $scope.image = image
+$scope.notes = $scope.$parent.notes;
+    $scope.open = function(thisNote) {
+        thisNote.relatedNotes =[];
+       angular.forEach($scope.notes, function(note){
+if(note.GroupID==thisNote.GroupID){
+    thisNote.relatedNotes.push(note)
+}
+note.aspect = note.Width/note.Height
+note.aspect>1.5?note.layout = "landscape":note.layout="portrait";
+    })
         $scope.title = 'title';
-aspect>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
 var img = new Image();
 
 img.onload = function(){
   var height = img.height;
   var width = img.width;
-  width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
+  //width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
 //console.log($scope.aspect)
 }
 
-img.src = image;
+//img.src = note.front;
 
+$scope.note = thisNote;
         var modalInstance = $modal.open({
             templateUrl: 'views/collectModal.html',
             controller: 'collModalInstCtrl',
             //size: size,
             resolve: {
-                relatedNotes: function() {
-                    return $scope.relatedNotes;
-                },
-                image: function() {
-                    return $scope.image;
-                },
-                title: function() {
-                    return $scope.title;
-                },
-                aspect: function(){
-                    return $scope.aspect
+                note:function(){
+                    return $scope.note
                 }
 
             }
@@ -340,10 +347,9 @@ img.src = image;
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-moafControllers.controller('collModalInstCtrl', function($scope, $rootScope, $modalInstance, title, image,relatedNotes, aspect) {
-    $scope.image = image;
-    console.log(image);
-    $scope.aspect = aspect;
+moafControllers.controller('collModalInstCtrl', function($scope, $modalInstance, note) {
+    $scope.note = note;
+    
 //     var img = new Image();
 
 // img.onload = function(){
@@ -354,8 +360,8 @@ moafControllers.controller('collModalInstCtrl', function($scope, $rootScope, $mo
 // }
 
 // img.src = image;
-    $scope.title = title;
-$scope.relatedNotes = relatedNotes;
+    //$scope.title = title;
+//$scope.relatedNotes = relatedNotes;
     $scope.ok = function() {
         $modalInstance.close();
     };

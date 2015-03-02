@@ -67,7 +67,7 @@ few of these notes remain in circulatio
 
      <div ng-controller="collectionsCtrl">
 
-<div ng-controller="collModalCtrl">  <div style="margin:10px;height:180px;float:left" class="wrapper" ng-repeat="note in filteredNotes" ng-click="open(note.OverrideTitle, 'images/'+note.front, note.Width/note.Height)">
+<div ng-controller="collModalCtrl">  <div style="margin:10px;height:180px;float:left" class="wrapper" ng-repeat="note in filteredNotes" ng-click="open(note)">
 <div class="noteHeader"><span class="noteTitle">{{note.OverrideTitle}}</span><span  class="noteActions"><i class="fa fa-refresh" ng-click="flipped=!flipped"></i>
 <i class="fa fa-info-circle"></i><i class="fa fa-share-alt" ></i>
     </span></div><div  class="noteHolder vertical flip-container">

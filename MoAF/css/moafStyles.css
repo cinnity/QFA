@@ -762,22 +762,7 @@ border: none;
   height: 80px;
   margin:10px
 }
-.modal-content .portrait {
-/* width: 120px; */
-/* height: 100%; */
-float: left;
-/* position: absolute; */
-/* top: 0; */
-/* right: 0; */
-}
-.modal-content .landscape {
-width: 100%;
-height: 120px;
-float: left;
-}
-.modal-content .related{
- 
-}
+
 .colModal .main{
   float:left;
 }
@@ -792,6 +777,22 @@ float: left;
   float:left;
   width:20%;
   overflow-y: auto;
+  height: 100%;
+}
+
+.modal-content .landscape .main{
+  float:left;
+  width:100%;
+  overflow-y: scroll;
+  height: 80%;
+  padding-bottom: 10px;
+}
+.modal-content .landscape .related{
+  float:left;
+  width:100%;
+  height:20%;
+  overflow-y: auto;
+  height: 120px;
 }
 .modal-body{
 max-height: 80%;
