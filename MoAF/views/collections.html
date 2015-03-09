@@ -1,94 +1,61 @@
-
 <div class="leftMenu">
-   
-<accordion style="width:600px" close-others="false">
-                           
-                             <accordion-group>
-                                <accordion-heading><span class="panelTitle">On Display<i class="fa fa-plus" ng-class="{'fa-folder-open': status.open, 'fa-folder': !status.open}" ng-click="status.open=!status.open"></i></span>
-                                </accordion-heading>
-                                <div ><ul>
-                                	<li>Obsolete Notes</li>
-                                	<li>Confederate Notes</li>
-                                	<li>Federal Instruments</li>
-                                </ul>
-                            </div>
-                            </accordion-group>
-                            <accordion-group is-open="1">
-                                <accordion-heading  ><span class="panelTitle">Shenkman Collection<i class="fa fa-folder-open" ng-class="{'fa-folder-open': !status.open, 'fa-folder': status.open}" ng-click="status.open=!status.open"></i></span></accordion-heading>
-                                  <div ><ul>
-                                	<li>Demand Notes</Li>
-                                	<li class="active">Legal Tender Notes</Li>
-                                	<li>Compound Interest</Li>
-                                	<li>Interest Bearing Notes</Li>
-                                	<li>Refunding Certificates</Li>
-                                	<li>Silver Certificates</Li>
-                                	<li>Treasury Or Coin Notes</Li>
-									<li>National Bank Notes</Li>
-                                	<li>Federal Reserve Bank Notes</Li>
-                                	<li>Federal Reserve Notes</Li>
-                                	<li>The National Gold Bank Notes</Li>
-                                	<li>Gold Certificates</Li>
-                                	<li>Fractional Currency</Li>
-                          
-                                </ul>
-                            </div>
-                          </accordion-group>    
-                         <accordion-group>
-                                <accordion-heading><span class="panelTitle">MoAF Collection<i class="fa fa-plus" ng-class="{'fa-folder-open': status.open, 'fa-folder': !status.open}" ng-click="status.open=!status.open"></i></span>
-                                </accordion-heading>
-                                <div ><ul>
-                                	<li>World War II Emergency Notes</li>
-                                </ul>
-                            </div>
-                   
-                            </accordion-group>
-            </accordion>
-<ul>
+
+    <accordion style="width:600px" close-others="false">
+        <accordion-group ng-repeat="(key, value) in collections">
+            <accordion-heading><span class="panelTitle">{{key}}<i class="fa fa-plus" ng-class="{'fa-folder-open': status.open, 'fa-folder': !status.open}" ng-click="status.open=!status.open"></i></span>
+            </accordion-heading>
+            <div>
+                <ul>
+                    <li ng-repeat="note in value | unique:'NoteType'" ng-click="changeType(note.NoteType)" ng-class="{'activeType':currentNoteType==note.NoteType, 'inactiveType':currentNoteType!=note.NoteType}">{{note.NoteType}}</li>
+                </ul>
+            </div>
+        </accordion-group>
+
+    </accordion>
+
 
 </div>
 <div class="mainContent">
-<div class="infoBlock"><div class="unitInfo">
-<span class="unitTitle">Legal Tender Notes</span>
-<ul>
-    <li><span>Issued</span>1862–1971</li>
-<li><span>Denominations</span>$10, $20, $50, $100, $500, $1,000</li>
-<li><span>Backed by</span>Full faith and Credit of the US Government<li>
-</ul>
-</div><div class="unitDescription">Legal Tender Notes, or United States Notes, were released over eight issues
-between 1862 and 1967. These notes are considered the original
-“greenbacks” due to the bright green ink used on the backs. While these
-notes were not backed by specie, they could be traded for gold at a
-discounted rate before 1879, at which time they were convertible to gold at
-its current par value. According to Act of May 3, 1878, total United States
-notes in circulation and in the Treasury must remain at $346,681,016. Very
-few of these notes remain in circulatio
-</div>
-</div>
+    <!-- <div class="infoBlock">
+        <div class="unitInfo">
+            <span class="unitTitle">Legal Tender Notes</span>
+            <ul>
+                <li><span>Issued</span>1862–1971</li>
+                <li><span>Denominations</span>$10, $20, $50, $100, $500, $1,000</li>
+                <li><span>Backed by</span>Full faith and Credit of the US Government
+                    <li>
+            </ul>
+        </div>
+        <div class="unitDescription">Legal Tender Notes, or United States Notes, were released over eight issues between 1862 and 1967. These notes are considered the original “greenbacks” due to the bright green ink used on the backs. While these notes were not backed by specie, they could be traded for gold at a discounted rate before 1879, at which time they were convertible to gold at its current par value. According to Act of May 3, 1878, total United States notes in circulation and in the Treasury must remain at $346,681,016. Very few of these notes remain in circulatio
+        </div>
+    </div> -->
 
-     <div ng-controller="collectionsCtrl">
+    <div ng-init="opac=0">
 
-<div ng-controller="collModalCtrl">  <div style="margin:10px;height:180px;float:left" class="wrapper" ng-repeat="note in filteredNotes" ng-click="open(note)">
-<div class="noteHeader"><span class="noteTitle">{{note.OverrideTitle}}</span><span  class="noteActions"><i class="fa fa-refresh" ng-click="flipped=!flipped"></i>
+        <div >
+            <div class="noteWrapper animated" ng-repeat="note in notesByPage ">
+                <div class="noteHeader"><span class="noteTitle">{{note.OverrideTitle}}</span><span class="noteActions"><i class="fa fa-refresh" ng-click="flipElem($event)"></i>
 <i class="fa fa-info-circle"></i><i class="fa fa-share-alt" ></i>
-    </span></div><div  class="noteHolder vertical flip-container">
-    
-    <div class="flipper">
-        <div class="front" style="background-image:url('images/{{note.front}}')">
+    </span></div>
+                <div class="vertical flip-container" ng-click="open(note)">
+
+                    <div class="flipper" ng-class="{'flipper':filpped}" ng-mouseenter="flipElem($event)">
+                        <img class="front" src="images/{{note.front}}" />
+
+                        <img class="back" src="images/{{note.back}}" />
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="back" style="background-image:url('images/{{note.back}}')">
-        </div>
-    </div>
-</div>
-</div>
-</div>
-<!-- <div ng-repeat="note in MOAFCollection"><span style="color:orange">{{note.OverrideTitle}}</span></div>
+        <!-- <div ng-repeat="note in MOAFCollection"><span style="color:orange">{{note.OverrideTitle}}</span></div>
  
 <div data-pagination="" data-num-pages="numPages()" 
       data-current-page="currentPage" data-max-size="maxSize"  
       data-boundary-links="true"></div>
 -->
 
-     <!--  <div class="pagWrapper"><pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination></div>
+        <!--  <div class="pagWrapper"><pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination></div>
   <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
     <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
     <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></pagination>
@@ -98,17 +65,17 @@ few of these notes remain in circulatio
 
     <hr />
     <h4>Pager</h4>
-    <pager class="moafPager" total-items="totalItems" ng-model="currentPage"></pager>--> 
+    <pager class="moafPager" total-items="totalItems" ng-model="currentPage"></pager>-->
 
-    <div class="nav rightNav" ng-click="setPage(currentPage + 1)"><i class="fa fa-arrow-right"></i>
-            </div>
+        <div class="nav rightNav" ng-click="setPage(currentPage + 1)" ng-show="currentPage<numPages()"><i class="fa fa-arrow-right"></i>
+        </div>
 
-<div class="nav leftNav" ng-click="setPage(currentPage - 1)"><i class="fa fa-arrow-left"></i>
-            </div>
+        <div class="nav leftNav" ng-click="setPage(currentPage - 1)" ng-show="currentPage>1"><i class="fa fa-arrow-left"></i>
+        </div>
 
- <div class="pageTrack">Page: {{bigCurrentPage}} / {{numPages()}}</div>
+        <div class="pageTrack">Page: {{bigCurrentPage}} / {{numPages()}}</div>
 
-    </div> 
+    </div>
 
 
 </div>

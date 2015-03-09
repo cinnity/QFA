@@ -1,15 +1,29 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{note.OverrideTitle}}</h3>
+    <i class="fa fa-times modalClose" ng-click="ok()"></i>
+    <i class="fa fa-refresh" ng-click="flipElem($event)" tooltip="Flip" tooltip-placement="bottom"></i>
+    <i class="fa fa-search-minus" ng-click="imgHt=imgHt-(1*imgHt>1)" tooltip="Zoom-out" tooltip-placement="bottom"></i>
+    <i class="fa fa-search-plus" ng-click="imgHt=imgHt+1" tooltip="Zoom-in" tooltip-placement="bottom"></i>
+</div>
+<div class="modal-body colModal portrait">
+    <div class="main " ng-class="{'noteFront':flipped,'noteBack':!flipped}">
+        <!--  <img src="images/{{note.front}}" ng-class="{'fullWidth':note.layout=='landscape','fullHeight':note.layout=='portrait'}" /> -->
+        <div class="noteInfo" style="height:15%">
+            <div class="noteInfoDiv">{{note.IndividualNoteInfo}}</div>
+        </div>
+        <div class="noteHolder vertical flip-container {{note.layout}}" style="height:85%">
+            <div class="flipper" ng-init="imgHt=1">
+                <div class="front"><img src="images/{{note.front}}" ng-style="{'transform':'scale('+imgHt+')'}" drag-elem /></div>
+                <div class="back"><img src="images/{{note.back}}" ng-style="{'transform':'scale('+imgHt+')'}" drag-elem /></div>
+            </div>
+        </div>
+    </div>
+    <div class="related " ng-init="relUp=0"><span class="relHeader">Related Notes</span>
+        <i class="relUp fa fa-chevron-up" ng-click="relUp=relUp+60"></i>
+        <div class="relWrapper" style="top:{{relUp}}px;transition: top 0.5s ease;" ><div ng-repeat="note in note.relatedNotes"><span ng-click="ok();open(note)" class="relatedNote "  tooltip="{{note.OverrideTitle}}" tooltip-placement="left"><img src="images/small/{{note.front}}" style="width:160px;margin:5px"></img></span></div></div>
+        <i class="relDown fa fa-chevron-down" ng-click="relUp=relUp-60"></i>
+    </div>
+</div>
+<div class="modal-footer">
 
-                                        <div class="modal-header">
-                                            <h3 class="modal-title">{{note.OverrideTitle}}</h3><i class="fa fa-times" ng-click="ok()"></i>
-                                        </div>
-                                        <div class="modal-body colModal {{note.layout}}">
-                                        	<div class="main ">
-                                            <img src="images/{{note.front}}" style="width:100%" />
-                                        </div>
-                                    <div class="related ">{{note.front}}
-<span class="relatedNote "  ng-repeat="note in note.relatedNotes">{{note.OverrideTitle}} </span>
-                                    </div></div>
-                                        <div class="modal-footer">
-                                           
-                                        </div>
-                                  
+</div>

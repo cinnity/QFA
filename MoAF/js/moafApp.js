@@ -4,7 +4,9 @@ var moafControllers = angular.module("moafControllers", []);
 var moafServices = angular.module("moafServices", ['ngResource']);
 var moafApp = angular.module("moafApp", [
     "ui.bootstrap",
+    'ui.filters',
     "ngCookies",
+    "ngAnimate",
     "ngGrid",
     "ngRoute",
     "moafControllers",
@@ -13,6 +15,14 @@ var moafApp = angular.module("moafApp", [
 
 ])
 
+moafDirectives.directive("dragElem", [function() {
+    return {
+        restrict: 'A',
+        link: function(scope, elem, attrs) {
+            elem.draggable();
+        }
+    }
+}])
 moafServices.factory("moafData", ["$resource", function($resource) {
     return $resource("moafData/:info.json", {}, {
         info: "@info",
@@ -25,7 +35,7 @@ moafServices.factory("moafData", ["$resource", function($resource) {
     })
 }])
 
-moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafData", "$log",function($scope, $location, $modal, moafData,$log) {
+moafControllers.controller("mainCtrl", ["$scope", "$rootScope", "$location", "$modal", "moafData", "$log", function($scope, $rootScope, $location, $modal, moafData, $log) {
     //$scope.currentPage=$location.path().split("/")[$location.path().split("/").length-1];
     $scope.currentPage = $location.path().split("/")[$location.path().split("/").length - 1]
     $scope.showHideInfo = function(event, obj, show) {
@@ -67,29 +77,67 @@ moafControllers.controller("mainCtrl", ["$scope", "$location", "$modal", "moafDa
     }
 
 
-    // $scope.open = function(img) {
-    //     $scope.image = img;
-    //     var modalInstance = $modal.open({
-    //         templateUrl: 'modal.html',
-    //         controller: 'modalInstCtrl',
-    //         resolve: {
-    //             items: function() {
-    //                 return $scope.items;
-    //             },
-    //             image: function() {
-    //                 return $scope.image;
-    //             }
+    $rootScope.flipElem = function(event) {
+        var parentModal = angular.element(event.target).parents('.modal-content')[0]
+        var flipper = angular.element(event.target).parents('div').eq(1).find(".flipper").eq(0);
+        angular.element(flipper)[0].style.transform == 'rotateY(180deg)' ? angular.element(flipper)[0].style.transform = '' : angular.element(flipper)[0].style.transform = 'rotateY(180deg)'
 
-    //         }
-    //     });
+    }
 
-    //     modalInstance.result.then(function(selectedItem) {
+    $rootScope.open = function(thisNote) {
 
-    //         $scope.selected = selectedItem;
-    //     }, function() {
-    //         $log.info('Modal dismissed at: ' + new Date());
-    //     });
-    // };
+        thisNote.relatedNotes = [];
+        angular.forEach($rootScope.notes, function(note) {
+            if (note.GroupID == thisNote.GroupID && note != thisNote) {
+                thisNote.relatedNotes.push(note)
+            }
+            note.aspect = note.Width / note.Height
+            note.aspect > 1.5 ? note.layout = "landscape" : note.layout = "portrait";
+        })
+        $scope.title = 'title';
+        var img = new Image();
+
+        $scope.note = thisNote;
+        var modalInstance = $modal.open({
+            templateUrl: 'views/collectModal.html',
+            controller: 'collModalInstCtrl',
+            backdrop: 'static',
+            windowClass: thisNote.layout,
+            //size: size,
+            resolve: {
+                note: function() {
+                    return $scope.note
+                }
+
+            }
+        });
+
+        modalInstance.result.then(function(selectedItem) {
+            $scope.selected = selectedItem;
+        }, function() {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+    $rootScope.move = function(dir) {
+        switch (dir) {
+            case "right":
+                $scope.lineLeft -= 400
+                break;
+            case "left":
+                if ($scope.lineLeft < 0) {
+                    $scope.lineLeft += 400;
+                }
+                break;
+            case "up":
+                $scope.relBottom -= 100;
+                break;
+            case "down":
+                $scope.relTop += 100;
+                break;
+        }
+
+
+    }
 
 }])
 
@@ -104,22 +152,15 @@ moafControllers.controller("timelineCtrl", ["$scope", "$rootScope", "moafData", 
         })
     })
 
-$scope.notes = moafData.query({
+    $rootScope.notes = moafData.query({
         "info": "noteTypeData"
     }).$promise.then(function(result) {
         $scope.noteTypes = $rootScope.noteTypes = result;
-            $scope.noteGroups = _.groupBy($scope.noteTypes, "noteEra");
+        $scope.noteGroups = _.groupBy($scope.noteTypes, "noteEra");
     })
 
     $scope.lineLeft = 0;
-    $scope.move = function(dir) {
-        if (dir == "right") {
-            $scope.lineLeft -= 400
-        } else if (dir == "left" && $scope.lineLeft < 0) {
-            $scope.lineLeft += 400;
-        }
 
-    }
 }])
 
 moafDirectives.directive("draggable", function() {
@@ -166,20 +207,16 @@ moafControllers.controller('paginationCtrl', function($scope) {
 
 moafControllers.controller('modalCtrl', function($scope, $rootScope, $modal, $log) {
 
-    $scope.items = ['item1', 'item2', 'item3'];
-
-    $scope.open = function(title, image) {
+    $scope.openModal = function(title, image) {
         console.log(image)
         $scope.image = image
-        $scope.title = 'title';
+        $scope.title = title;
         var modalInstance = $modal.open({
-            templateUrl: 'views/collectModal.html',
+            templateUrl: 'views/genericModal.html',
             controller: 'modalInstCtrl',
+            windowClass: 'timeLineModal',
             //size: size,
             resolve: {
-                items: function() {
-                    return $scope.items;
-                },
                 image: function() {
                     return $scope.image;
                 },
@@ -216,152 +253,153 @@ moafControllers.controller('modalInstCtrl', function($scope, $rootScope, $modalI
 
 
 
-moafControllers.controller("collectionsCtrl", function($scope, $log){
-        // Create x2js instance with default config
-function loadXMLDoc(dname) {
+moafControllers.controller("collectionsCtrl", function($scope, $rootScope, $filter, $log) {
+    // Create x2js instance with default config
+    function loadXMLDoc(dname) {
         if (window.XMLHttpRequest) {
-            var xhttp=new XMLHttpRequest();
+            var xhttp = new XMLHttpRequest();
+        } else {
+            var xhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        else {
-            var xhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xhttp.open("GET",dname,false);
+        xhttp.open("GET", dname, false);
         xhttp.send();
         return xhttp.responseXML;
     }
 
 
-var xmlDoc = loadXMLDoc("moafData/MOAFNotesData.xml");
+    var xmlDoc = loadXMLDoc("moafData/MOAFNotesData.xml");
     var x2js = new X2JS();
     var notesData = x2js.xml2json(xmlDoc);
-    $scope.notes = notesData.NotesDataTable.NoteInfo
-    $scope.shenkmanCollection=[];
-    $scope.ExhibitCollection=[];
-    $scope.MOAFCollection=[];
-   
-    angular.forEach($scope.notes, function(note, noteIndex){
-if(note.IsShenkmanCollection){
-    $scope.shenkmanCollection.push(note)
-}
-if(note.IsExhibitCollection){
-    $scope.ExhibitCollection.push(note)
-}
-if(note.IsMOAFCollection){
-    $scope.MOAFCollection.push(note)
-}
+    $rootScope.notes = notesData.NotesDataTable.NoteInfo
+    $scope.shenkmanCollection = [];
+    $scope.ExhibitCollection = [];
+    $scope.MOAFCollection = [];
+    $rootScope.noteTypes = [];
+    angular.forEach($rootScope.notes, function(note, noteIndex) {
+        $rootScope.noteTypes.push(note.NoteType)
+        if (note.IsShenkmanCollection) {
+            $scope.shenkmanCollection.push(note)
+        }
+        if (note.IsExhibitCollection) {
+            $scope.ExhibitCollection.push(note)
+        }
+        if (note.IsMOAFCollection) {
+            $scope.MOAFCollection.push(note)
+        }
     })
-$scope.currentCollection = 'shenkmanCollection';
 
- $scope.maxSize = 5;
-  $scope.bigTotalItems = 175;
-  $scope.bigCurrentPage = 1;
 
-$scope.totalItems = $scope[$scope.currentCollection].length;
+    $rootScope.noteTypes = _.unique($rootScope.noteTypes);
+    $scope.collections = {
+        "Shenkman Collection": $scope.shenkmanCollection,
+        "Exhibit Collection": $scope.ExhibitCollection,
+        "MOAF Collection": $scope.MOAFCollection
+    }
 
-  $scope.filteredNotes = [];
-  $scope.currentPage = 1;
-  $scope.numPerPage = 6;
+    $scope.currentCollection = 'shenkmanCollection';
+$scope.currentNotes = $scope[$scope.currentCollection]
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = 175;
+    $scope.bigCurrentPage = 1;
 
-$scope.getRelatedNotes = function(thisNote){
-    var relatedNotes = [];
-    angular.forEach($scope.notes, function(note){
-if(note.GroupID==thisNote.GroupID){
-    relatesNotes.push(note)
-}
+    $scope.totalItems = $scope.currentNotes.length;
+    $scope.currentNoteType='';
+    $scope.filteredNotes = [];
+    $scope.currentPage = 1;
+    $scope.numPerPage = 6;
+    
+    $scope.filteredNotes = $scope.currentNotes
+
+    $scope.getTipLoc = function(layout) {
+        var loc
+        layout == "portrait" ? loc = "left" : loc = "top";
+        console.log(loc)
+        return loc;
+    }
+    $scope.numPages = function() {
+        return Math.ceil($scope.currentNotes.length / $scope.numPerPage);
+    };
+
+    $scope.setPage = function(pageNo) {
+        if (pageNo > 0&&pageNo <= $scope.numPages()) {
+                 $scope.currentPage = pageNo;
+  
+        }
+        $scope.bigCurrentPage = $scope.currentPage;
+    };
+
+    $scope.pageChanged = function() {
+        //$log.log('Page changed to: ' + $scope.currentPage);
+    };
+    $scope.changeType = function(newType) {
+        $scope.currentNoteType = newType;
+        var filtered = [];
+        for (var i = 0; i < $scope[$scope.currentCollection].length; i++) {
+                var filteredNote = $scope[$scope.currentCollection][i];
+if (filteredNote.NoteType == $scope.currentNoteType) {
+                    filtered.push(filteredNote);
+                }
+            }
+                                      $scope.notesByType = filtered;
+                                     $scope.currentNotes = $scope.notesByType;
+                                     var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+        var end = begin + $scope.numPerPage;
+        $scope.notesByPage = $scope.currentNotes.slice(begin, end);
+    }
+
+
+    moafApp.filter('byNoteType', function() {
+        return function(items) {
+            var filtered = [];
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                if (item.NoteType == $scope.currentNoteType) {
+                    filtered.push(item);
+                }
+            }
+            return filtered;
+        };
     })
-    console.log(relatedNotes)
-    return relateNotes
-}
- $scope.numPages = function () {
-    return Math.ceil($scope[$scope.currentCollection].length / $scope.numPerPage);
-  };
 
-$scope.setPage = function (pageNo) {
-    $scope.currentPage = pageNo;
-    if(pageNo>$scope.numPages()){console.log()}
-    $scope.bigCurrentPage = $scope.currentPage;
-};
+    $scope.$watch('currentPage + numPerPage', function() {
+        var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+        var end = begin + $scope.numPerPage;
+        $scope.notesByPage = $scope.currentNotes.slice(begin, end);
+    });
 
-  $scope.pageChanged = function() {
-    //$log.log('Page changed to: ' + $scope.currentPage);
-  };
-$scope.$watch('currentPage + numPerPage', function() {
-    var begin = (($scope.currentPage - 1) * $scope.numPerPage);
-    var end = begin + $scope.numPerPage;
-    $scope.filteredNotes = $scope[$scope.currentCollection].slice(begin, end);
-  });
-
-$scope.$watch('bigCurrentPage + numPerPage', function() {
-    var begin = (($scope.bigCurrentPage - 1) * $scope.numPerPage);
-    var end = begin + $scope.numPerPage;
-    $scope.filteredNotes = $scope[$scope.currentCollection].slice(begin, end);
-  });
+    $scope.$watch('bigCurrentPage + numPerPage', function() {
+        var begin = (($scope.bigCurrentPage - 1) * $scope.numPerPage);
+        var end = begin + $scope.numPerPage;
+        $scope.notesByPage = $scope.currentNotes.slice(begin, end);
+    });
 })
 
 
 moafControllers.controller('collModalCtrl', function($scope, $rootScope, $modal, $log) {
 
-$scope.notes = $scope.$parent.notes;
-    $scope.open = function(thisNote) {
-        thisNote.relatedNotes =[];
-       angular.forEach($scope.notes, function(note){
-if(note.GroupID==thisNote.GroupID){
-    thisNote.relatedNotes.push(note)
-}
-note.aspect = note.Width/note.Height
-note.aspect>1.5?note.layout = "landscape":note.layout="portrait";
-    })
-        $scope.title = 'title';
-var img = new Image();
+    $rootScope.notes = $scope.$parent.notes;
 
-img.onload = function(){
-  var height = img.height;
-  var width = img.width;
-  //width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
-//console.log($scope.aspect)
-}
-
-//img.src = note.front;
-
-$scope.note = thisNote;
-        var modalInstance = $modal.open({
-            templateUrl: 'views/collectModal.html',
-            controller: 'collModalInstCtrl',
-            //size: size,
-            resolve: {
-                note:function(){
-                    return $scope.note
-                }
-
-            }
-        });
-
-        modalInstance.result.then(function(selectedItem) {
-            $scope.selected = selectedItem;
-        }, function() {
-            $log.info('Modal dismissed at: ' + new Date());
-        });
-    };
 });
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-moafControllers.controller('collModalInstCtrl', function($scope, $modalInstance, note) {
+moafControllers.controller('collModalInstCtrl', function($scope, $rootScope, $modalInstance, note) {
     $scope.note = note;
-    
-//     var img = new Image();
 
-// img.onload = function(){
-//   var height = img.height;
-//   var width = img.width;
-//   width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
-// console.log($scope.aspect)
-// }
 
-// img.src = image;
-    //$scope.title = title;
-//$scope.relatedNotes = relatedNotes;
+    //     var img = new Image();
+
+    // img.onload = function(){
+    //   var height = img.height;
+    //   var width = img.width;
+    //   width/height>1.5?$scope.aspect = "landscape":$scope.aspect="portrait";
+    // console.log($scope.aspect)
+    // }
+
+    $scope.zoomNote = function() {
+
+    }
     $scope.ok = function() {
         $modalInstance.close();
     };
@@ -370,12 +408,3 @@ moafControllers.controller('collModalInstCtrl', function($scope, $modalInstance,
         $modalInstance.dismiss('cancel');
     };
 });
-
-
-
-
-
-
-
-
-

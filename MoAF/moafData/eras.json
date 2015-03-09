@@ -378,6 +378,18 @@
         "events": [
             {
                 "eventType": "eventFinHist",
+                "eventTitle": "Legal Tender Notes",
+                "eventImage": "",
+                "eventTime": "1862 - 1971",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    13,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
                 "eventTitle": "Legal Tenders Act",
                 "eventImage": "",
                 "eventTime": "1862",
@@ -408,32 +420,68 @@
                 "eventDecade": "1860s",
                 "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
                 "eventCoords": [
-                    14,
+                    15,
+                    1
+                ]
+            },
+            {
+                "eventType": "eventHist",
+                "eventTitle": "1863 Emancipation Proclamation",
+                "eventImage": "",
+                "eventTime": "1863",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    15,
+                    2
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "National Bank Notes",
+                "eventImage": "",
+                "eventTime": "1863 - 1935",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    15,
                     3
                 ]
             },
             {
                 "eventType": "eventHist",
-                "eventTitle": "1863 Emancipation Proclamation",
+                "eventTitle": "1863 Battle of Gettysburg",
                 "eventImage": "",
                 "eventTime": "1863",
                 "eventDecade": "1860s",
                 "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
                 "eventCoords": [
                     15,
+                    3
+                ]
+            },
+            {
+                "eventType": "eventFinHist",
+                "eventTitle": "Compound Interest Treasury Notes",
+                "eventImage": "",
+                "eventTime": "1864",
+                "eventDecade": "1860s",
+                "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
+                "eventCoords": [
+                    16,
                     1
                 ]
             },
             {
                 "eventType": "eventHist",
-                "eventTitle": "1863 Emancipation Proclamation",
+                "eventTitle": "1865 Abraham Lincoln assassinated",
                 "eventImage": "",
-                "eventTime": "1863",
+                "eventTime": "1865",
                 "eventDecade": "1860s",
                 "eventDetail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere erat quis metus tincidunt elementum. Praesent ut tortor erat. Fusce elementum sem a interdum scelerisque. Praesent porta posuere tellus, in faucibus quam dictum at. Donec dapibus, massa a consectetur commodo, felis urna sollicitudin velit, dignissim vulputate tortor arcu vel augue. Integer non molestie dui. Vivamus consequat tempor justo, vel luctus odio. Etiam nulla nulla, vehicula sit amet sem ut, consequat tempor urna. Nam vel nisl at ante maximus volutpat. Sed egestas accumsan ullamcorper.",
                 "eventCoords": [
                     15,
-                    1
+                    2
                 ]
             }
         ]
